@@ -1,0 +1,259 @@
+<html>
+
+<head>
+    <title>Loading Player 3...</title>
+
+    <style>
+        body {
+            background-color: #1e1e1e;
+            opacity: 1;
+            transition: 1s opacity;
+
+            color: #d4d4d4;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: normal;
+            letter-spacing: 0px;
+        }
+
+        body.fade-out {
+            background-color: #101010;
+            opacity: 0;
+            transition: none;
+        }
+
+        .reserved-word {
+            color: #569cd6;
+        }
+
+        .function-name {
+            color: #dcdcaa;
+        }
+
+        .comment {
+            color: #608b4e;
+        }
+
+        .variable {
+            color: #9cdcfe;
+        }
+
+        .number {
+            color: #b5cea8;
+        }
+
+        .string-value {
+            color: #ce9178;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="code-block" style="overflow:auto;"></span>
+
+    <!-- Fade body to darker black-->
+    <script type='text/javascript'>
+        document.body.className += ' fade-out';
+    </script>
+    <script type='text/javascript'>
+        window.onload = function () {
+            setTimeout(function () {
+                document.body.classList.remove('fade-out');
+            }, 1500)
+        };
+    </script>
+
+    <!-- Scroll down as more code is added -->
+    <script type='text/javascript'>
+        setInterval(function () {
+            console.log(`Scrolling into view`);
+            document.getElementById('code-block').scrollIntoView(false);
+        }, 750);
+    </script>
+
+    <script src="lib/typeit/typeit.min.js"></script>
+
+    <script type="text/javascript">
+        new TypeIt(document.getElementById('code-block'), {
+                speed: 80,
+                lifeLike: true,
+                autoStart: false,
+                loop: false,
+                loopDelay: 15000
+            })
+            // Sam
+            .pause(3000) // Wait for the fade before beginning
+            .type(`<span class='reserved-word'>var </span>`)
+            .type(`<span class='variable'>samster</span>`)
+            .type(`<span> = {</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>name: </span>`)
+            .type(`<span class='string-value'>'Sameer Singh'</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>age: </span>`)
+            .type(`<span class='number'>31</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>attributes: </span>`)
+            .type(`<span>[</span>`)
+            .type(`<span class='string-value'>'awesome'</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='string-value'>'funny guy'</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='string-value'>'git master'</span>`)
+            .type(`<span> 👨‍💻</span>`)
+            .type(`<span>]</span>`)
+            .break()
+            .type(`<span>};</span>`)
+
+            .break()
+            .break()
+
+            // Karu
+            .type(`<span class='reserved-word'>var </span>`)
+            .type(`<span class='variable'>kayster</span>`)
+            .type(`<span> = {</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>name: </span>`)
+            .type(`<span class='string-value'>'Karusha Singh'</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>age: </span>`)
+            .type(`<span class='number'>2</span>`)
+            .pause(750)
+            .type(`<span class='number'>7?</span>`)
+            .pause(750)
+            .type(`<span> 🤦🙇</span>`)
+            .pause(1500)
+            .delete(8)
+            .type(`<span class='number'>25</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>attributes: </span>`)
+            .type(`<span>[</span>`)
+            .type(`<span class='string-value'>'amazing'</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='string-value'>'beautiful'</span>`)
+            .type(`<span> 💁</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='string-value'>'best cook ever'</span>`)
+            .type(`<span> 👩‍🍳</span>`)
+            .type(`<span>]</span>`)
+            .break()
+            .type(`<span>};</span>`)
+
+            .break()
+            .break()
+
+            // First Date
+            .type(`<span class='function-name'>firstDate</span>`)
+            .type(`<span>(</span>`)
+            .type(`<span class='variable'>samster</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='variable'>kayster</span>`)
+            .type(`<span>, {</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>date: </span>`)
+            .type(`<span class='string-value'>'21 February 2013'</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>place: </span>`)
+            .type(`<span class='string-value'>'PRIMI Piatti'</span>`)
+            .type(`<span> 👫💕</span>`)
+            .break()
+            .type(`<span>});</span>`)
+
+            .break()
+            .break()
+
+            // Marriage
+            .type(`<span class='reserved-word'>var </span>`)
+            .type(`<span class='variable'>singhFamily</span>`)
+            .type(`<span> = </span>`)
+            .type(`<span class='function-name'>getHitched</span>`)
+            .type(`<span>([</span>`)
+            .type(`<span class='variable'>samster</span>`)
+            .type(`<span>, </span>`)
+            .type(`<span class='variable'>kayster</span>`)
+            .type(`<span>], {</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>date: </span>`)
+            .type(`<span class='string-value'>'17 February 2016'</span>`)
+            .type(`<span> 🤵👰</span>`)
+            .break()
+            .type(`<span>});</span>`)
+
+            .break()
+            .break()
+
+            // Move to Aus
+            .type(`<span class='variable'>singhFamily</span>`)
+            .type(`<span>.</span>`)
+            .type(`<span class='function-name'>moveToAustralia</span>`)
+            .type(`<span>({</span>`)
+            .type(`<span> 🐨</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>date: </span>`)
+            .type(`<span class='string-value'>'24 May 2016'</span>`)
+            .type(`<span> ✈</span>`)
+            .break()
+            .type(`<span>});</span>`)
+
+            .break()
+            .break()
+
+            // Baby #1
+            .pause(2500)
+            .type(`<span class='variable'>singhFamily</span>`)
+            .type(`<span>.</span>`)
+            .type(`<span class='function-name'>add</span>`)
+            .type(`<span>({</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>gender: </span>`)
+            .type(`<span class='reserved-word'>undefined</span>`)
+            .type(`<span>,</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='variable'>date: </span>`)
+            .type(`<span class='string-value'>'August 2018'</span>`)
+            .type(`<span> 👶</span>`)
+            .break()
+            .type(`<span>});</span>`)
+
+            .break()
+            .break()
+
+            // Big Comment
+            .type(`<span class='comment'>/*</span>`)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='comment'>There's a bun in the oven.</span>`)
+            .pause(750)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='comment'>She's eating for two.</span>`)
+            .pause(1000)
+            .break()
+            .pause(2500)
+            .break()
+            .type(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`)
+            .type(`<span class='comment'>🎉 WE'RE PREGNANT! 🎉</span>`)
+            .break()
+            .type(`<span class='comment'>*/</span>`)
+            .break();
+    </script>
+</body>
+
+</html>
