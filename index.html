@@ -45,23 +45,74 @@
         .string-value {
             color: #ce9178;
         }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        #photo {
+            padding: 20, 20, 20, 20;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .popout {
+            animation: popout 1s ease;
+            -webkit-animation: popout 1s ease;
+        }
+
+        @keyframes popout {
+            from {
+                transform: scale(0)
+            }
+            80% {
+                transform: scale(1.2)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes popout {
+            from {
+                -webkit-transform: scale(0)
+            }
+            80% {
+                -webkit-transform: scale(1.2)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
     </style>
 </head>
 
 <body>
-    <span id="intro-sam-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="intro-karu-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="first-date-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="marriage-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="move-to-aus-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="baby-block" style="overflow:auto;"></span>
-    <br/>
-    <span id="comment-block" style="overflow:auto;"></span>
+    <div class="wrapper">
+        <div id="code" class="left">
+            <span id="intro-sam-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="intro-karu-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="first-date-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="marriage-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="move-to-aus-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="baby-block" style="overflow:auto;"></span>
+            <br/>
+            <span id="comment-block" style="overflow:auto;"></span>
+        </div>
+        <div id="photo" class="right popout" style="display:none;">
+            <img src="assets/our-boy-bowtie.png" width="500" height="500" />
+        </div>
+    </div>
 
     <!-- Fade body to darker black-->
     <script type='text/javascript'>
@@ -86,6 +137,7 @@
             document.getElementById('move-to-aus-block').scrollIntoView(false);
             document.getElementById('baby-block').scrollIntoView(false);
             document.getElementById('comment-block').scrollIntoView(false);
+            document.getElementById('photo').scrollIntoView(false);
         }, 750);
     </script>
 
@@ -340,7 +392,10 @@
                     lifeLike: true,
                     autoStart: false,
                     loop: false,
-                    loopDelay: 15000
+                    loopDelay: 15000,
+                    callback: function () {
+                        document.getElementById('photo').style = "";
+                    }
                 })
                 // Big Comment
                 .type(`<span class='comment'>/*</span>`)
